@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerald Esquilona | Personal Portfolio</title>
+
+    <style>
+        /* GENERAL SETTINGS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #07152e;
+            color: white;
+        }
+
+        /* NAVIGATION BAR */
+        header {
+            background: #0b1f40;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 15px #0005;
+        }
+
+        .logo {
+            color: #38bdf8;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* HOME / HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 10%;
+            gap: 40px;
+            background: linear-gradient(135deg, #07152e, #103b75);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h3 {
+            color: #38bdf8;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 span {
+            color: #38bdf8;
+        }
+
+        .hero-content h2 {
+            color: #93c5fd;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #0ea5e9;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin: 5px 8px 5px 0;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buttons a:hover {
+            background: #2563eb;
+            transform: translateY(-4px);
+        }
+
+        .buttons .secondary {
+            background: transparent;
+            border: 2px solid #38bdf8;
+        }
+
+        /* PROFILE PLACEHOLDER */
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            border: 7px solid #38bdf8;
+            box-shadow: 0 0 35px #0ea5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #12345e;
+            color: #93c5fd;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: #0b1f40;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.9;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        /* SKILLS SECTION */
+        .skills {
+            background: #07152e;
+        }
+
+        .skill-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #102b50;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #1e4979;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+            box-shadow: 0 8px 25px #0284c755;
+        }
+
+        .skill-card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* GALLERY SECTION */
+        .gallery {
+            background: #0b1f40;
+            text-align: center;
+        }
+
+        .gallery-description {
+            color: #cbd5e1;
+            margin-bottom: 35px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            background: #102b50;
+            padding: 15px;
+            border-radius: 18px;
+            border: 2px solid #1e4979;
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 25px #0284c755;
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .gallery-item h3 {
+            color: #38bdf8;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #041025;
+            text-align: center;
+            padding: 25px;
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+
+        footer span {
+            color: #38bdf8;
+        }
+
+        /* TABLET RESPONSIVENESS */
+        @media (max-width: 850px) {
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .skill-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .skill-container,
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                width: 220px;
+                height: 220px;
+                font-size: 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .gallery-item img {
+                height: 300px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+
+        <div class="logo">GERALD.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#gallery">Gallery</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h3>WELCOME TO MY PORTFOLIO</h3>
+
+            <h1>
+                Hello, I'm <span>Gerald Esquilona</span>
+            </h1>
+
+            <h2>BS Information Systems Student</h2>
+
+            <p>
+                I am passionate about technology, creativity, and web
+                development. I enjoy exploring new technologies and
+                creating beautiful, functional, and user-friendly websites.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#about">Explore About Me</a>
+
+                <a href="#gallery" class="secondary">
+                    View My Gallery
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            GE
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <p>
+            Hello! My name is Gerald Esquilona, a Bachelor of Science
+            in Information Systems student. I have a strong interest
+            in technology, web design, and digital innovation.
+
+            I continuously improve my skills and explore creative
+            ways to build useful and user-friendly websites.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+    <section class="skills" id="skills">
+
+        <h2 class="section-title">
+            My Interests & <span>Skills</span>
+        </h2>
+
+        <p style="text-align:center; color:#cbd5e1; margin-bottom:35px;">
+
+            Technologies and areas I am interested in learning.
+
+        </p>
+
+        <div class="skill-container">
+
+            <div class="skill-card">
+
+                <div class="icon">🌐</div>
+
+                <h3>HTML5</h3>
+
+                <p>
+                    Building structured and meaningful web pages.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">🎨</div>
+
+                <h3>CSS3</h3>
+
+                <p>
+                    Designing attractive and responsive websites.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">💻</div>
+
+                <h3>Web Design</h3>
+
+                <p>
+                    Creating modern and user-friendly interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">🚀</div>
+
+                <h3>Technology</h3>
+
+                <p>
+                    Exploring innovations and digital solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery" id="gallery">
+
+        <h2 class="section-title">
+            My <span>Gallery</span>
+        </h2>
+
+        <p class="gallery-description">
+            A collection of my favorite pictures and memories.
+        </p>
+
+        <div class="gallery-container">
+
+            <!-- FIRST PICTURE -->
+            <div class="gallery-item">
+
+                <img
+                    src="gallery.jpg"
+                    alt="Cute white rabbit wearing a strawberry hat"
+                >
+
+                <h3>Strawberry Bunny 🍓</h3>
+
+            </div>
+
+
+            <!-- SECOND PICTURE -->
+            <div class="gallery-item">
+
+                <img
+                    src="gallery (2)-1024.jpg"
+                    alt="Cute illustrated brown bunny"
+                >
+
+                <h3>Adorable Bunny 🐰</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <span>Gerald Esquilona</span> | Personal Portfolio
+        </p>
+
+        <p>
+            Designed with HTML5 & CSS3 💙
+        </p>
+
+    </footer>
+
+</body>
+</html>

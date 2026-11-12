@@ -1,0 +1,646 @@
+/* =====================================
+   GERALD ESQUILONA PERSONAL PORTFOLIO
+   MODERN DARK PURPLE THEME
+===================================== */
+
+/* GLOBAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #a855f7;
+    --secondary: #d8b4fe;
+    --dark: #0b0718;
+    --card: #171027;
+    --text: #c4b5d9;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+span {
+    color: var(--primary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+/* NAVIGATION */
+
+header {
+    width: 100%;
+    background: rgba(11, 7, 24, 0.95);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #9333ea,
+        #c084fc
+    );
+
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    margin-left: 10px;
+}
+
+/* HOME HERO SECTION */
+
+.hero {
+    min-height: 85vh;
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    animation: slideLeft 1s ease;
+}
+
+.subtitle {
+    color: var(--primary);
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    color: var(--secondary);
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: var(--text);
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* PROFILE IMAGE */
+
+.hero-image {
+    position: relative;
+    width: 350px;
+    height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-image img {
+    width: 290px;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 5px solid var(--primary);
+
+    box-shadow:
+        0 0 20px #9333ea,
+        0 0 50px rgba(168, 85, 247, 0.5);
+
+    position: relative;
+    z-index: 2;
+}
+
+.image-glow {
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #9333ea,
+        transparent,
+        #c084fc
+    );
+
+    filter: blur(30px);
+}
+
+/* SKILLS SECTION */
+
+.skills {
+    padding: 80px 30px;
+    text-align: center;
+    background: #100a20;
+}
+
+.skills h2,
+.information h2,
+.goals h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: var(--text);
+    margin-bottom: 40px;
+}
+
+.skill-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--card);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 15px;
+
+    padding: 30px 20px;
+
+    transition: 0.4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.skill-card h3 {
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.skill-card p {
+    color: var(--text);
+}
+
+/* ABOUT PAGE */
+
+.about-section {
+    padding: 80px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h1 {
+    font-size: 45px;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 380px;
+    height: 400px;
+    object-fit: cover;
+
+    border-radius: 20px;
+    border: 3px solid var(--primary);
+
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.about-text .btn {
+    margin-top: 10px;
+}
+
+/* PERSONAL INFORMATION */
+
+.information {
+    background: #100a20;
+    padding: 80px 30px;
+    text-align: center;
+}
+
+.info-container {
+    max-width: 1100px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+
+    border-left: 4px solid var(--primary);
+
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateX(5px);
+}
+
+.info-card h3 {
+    color: var(--secondary);
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: var(--text);
+}
+
+/* GOALS SECTION */
+
+.goals {
+    padding: 80px 30px;
+    text-align: center;
+}
+
+.goal-container {
+    max-width: 1100px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.goal-card {
+    padding: 30px;
+    background: var(--card);
+    border-radius: 15px;
+
+    border: 1px solid rgba(168, 85, 247, 0.2);
+
+    transition: 0.3s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.goal-card h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.goal-card p {
+    color: var(--text);
+}
+
+/* GALLERY PAGE */
+
+.gallery-header {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.gallery-header h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.gallery-header p {
+    color: var(--text);
+}
+
+.gallery-section {
+    padding: 30px 30px 80px;
+}
+
+.gallery-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.gallery-card {
+    background: var(--card);
+    border-radius: 15px;
+    overflow: hidden;
+
+    border: 1px solid rgba(168, 85, 247, 0.2);
+
+    transition: 0.4s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+
+    transition: 0.5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-info {
+    padding: 20px;
+}
+
+.gallery-info h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.gallery-info p {
+    color: var(--text);
+}
+
+/* QUOTE SECTION */
+
+.quote-section {
+    padding: 70px 25px;
+    text-align: center;
+    background: #100a20;
+}
+
+.quote-section h2 {
+    color: var(--secondary);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.quote-section p {
+    color: var(--text);
+}
+
+/* FOOTER */
+
+footer {
+    background: #070410;
+    text-align: center;
+    padding: 25px;
+
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+footer p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* TABLET RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .skill-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .goal-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero-image img {
+        width: 230px;
+        height: 230px;
+    }
+
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .image-glow {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .skill-container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-header h1 {
+        font-size: 32px;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+    }
+
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
